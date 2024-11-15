@@ -15,12 +15,17 @@ export default async function Store() {
 
     return (
         <main>
-            <div>
+            <div className="flex items-center justify-center">
                 <h1>This is the Product, former Store, Page</h1>
-                <div>{productList.map((product) => <div><span>pris: </span>{product.price + " " + "id:" + product.id}</div> )}</div>
+                <ProductCard product={productList.at(0)}></ProductCard>
+
+                <section className="">
+                    
                 
-                <div>{productList.map((product, index) => (<ProductCard product={product} key={index}></ProductCard>))}</div>
+                    <div>{productList.map((product) => <div><span>pris: </span>{product.price + " " + "id:" + product.id}</div> )}</div>
                 
+                    <div>{productList.map((product, index) => (<ProductCard product={product} key={index}></ProductCard>))}</div>
+                </section>
                 <Link href={"/"} >To Home</Link>
             </div>
         </main>
