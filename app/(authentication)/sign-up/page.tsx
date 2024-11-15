@@ -14,6 +14,12 @@ export default function SignUp() {
     function onSubmit (event :FormEvent) {
         event.preventDefault()
         // customise signup logic
+        // a try-catch may be relevant..
+        fetch("http://localhost:8080/api/v1/users/register", {
+            method: "POST", 
+            headers: {"content-type": "application/json;charset=UTF-8"},
+            body: JSON.stringify(user)
+        })
     }
 
     return (
